@@ -68,9 +68,13 @@ const Footer = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-lg bg-gray-100 hover:bg-primary text-gray-600 hover:text-white transition-colors"
+                  className="px-4 py-2.5 rounded-lg bg-gray-100 text-gray-600 transition-colors"
                   style={{ cursor: "none" }}
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: "rgb(37, 99, 235)",
+                    color: "#ffffff",
+                  }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.2 }}
                   aria-label={link.name}

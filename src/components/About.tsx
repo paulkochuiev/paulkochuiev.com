@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Code, Zap, Building2 } from "lucide-react";
 import { SECTIONS } from "../constants";
 
@@ -7,6 +7,16 @@ const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia("(max-width: 1024px)").matches);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <motion.section
@@ -41,17 +51,28 @@ const About = () => {
           }}
         >
           <motion.div
-            className="space-y-4"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <p className="text-sm sm:text-base text-primary-light leading-relaxed">
-              {SECTIONS.about.description}
-            </p>
+            <div className="space-y-4">
+              <p className="text-sm sm:text-base text-primary-light leading-relaxed">
+                {SECTIONS.about.description}
+              </p>
+
+              <motion.p
+                className="text-sm sm:text-base text-primary-light leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              >
+                {SECTIONS.about.closing}
+              </motion.p>
+            </div>
 
             <motion.div
-              className="mt-6 space-y-3"
+              className="space-y-3 lg:pl-8 lg:border-l lg:border-gray-200"
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ delay: 0.4, duration: 0.5 }}
@@ -61,8 +82,8 @@ const About = () => {
                   className="flex-shrink-0 mt-0.5"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{
-                    opacity: isHovered ? 1 : 0,
-                    scale: isHovered ? 1 : 0,
+                    opacity: isMobile || isHovered ? 1 : 0,
+                    scale: isMobile || isHovered ? 1 : 0,
                   }}
                   transition={{ duration: 0.3 }}
                 >
@@ -81,8 +102,8 @@ const About = () => {
                   className="flex-shrink-0 mt-0.5"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{
-                    opacity: isHovered ? 1 : 0,
-                    scale: isHovered ? 1 : 0,
+                    opacity: isMobile || isHovered ? 1 : 0,
+                    scale: isMobile || isHovered ? 1 : 0,
                   }}
                   transition={{ duration: 0.3, delay: 0.1 }}
                 >
@@ -101,8 +122,8 @@ const About = () => {
                   className="flex-shrink-0 mt-0.5"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{
-                    opacity: isHovered ? 1 : 0,
-                    scale: isHovered ? 1 : 0,
+                    opacity: isMobile || isHovered ? 1 : 0,
+                    scale: isMobile || isHovered ? 1 : 0,
                   }}
                   transition={{ duration: 0.3, delay: 0.2 }}
                 >
@@ -116,15 +137,6 @@ const About = () => {
                 </p>
               </div>
             </motion.div>
-
-            <motion.p
-              className="text-sm sm:text-base text-primary-light leading-relaxed mt-6"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            >
-              {SECTIONS.about.closing}
-            </motion.p>
           </motion.div>
         </motion.div>
       </div>
