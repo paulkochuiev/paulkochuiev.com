@@ -68,7 +68,7 @@ const Footer = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-lg bg-gray-100 text-gray-600 transition-colors"
+                  className="px-4 py-2.5 rounded-lg bg-gray-100 text-gray-600"
                   style={{ cursor: "none" }}
                   whileHover={{
                     scale: 1.1,
@@ -76,7 +76,11 @@ const Footer = () => {
                     color: "#ffffff",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{
+                    type: "tween",
+                    duration: 0.3,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   aria-label={link.name}
                 >
                   <Icon className="w-5 h-5" />

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -13,8 +13,8 @@ const CustomCursor = () => {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
     if (isMobile) {
       return;
     }
@@ -22,7 +22,7 @@ const CustomCursor = () => {
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
-      
+
       if (!isVisible) {
         setIsVisible(true);
       }
@@ -31,10 +31,10 @@ const CustomCursor = () => {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (
-        target.tagName === 'A' ||
-        target.tagName === 'BUTTON' ||
-        target.closest('a') ||
-        target.closest('button')
+        target.tagName === "A" ||
+        target.tagName === "BUTTON" ||
+        target.closest("a") ||
+        target.closest("button")
       ) {
         setIsHovering(true);
       } else {
@@ -47,18 +47,20 @@ const CustomCursor = () => {
       setIsHovering(false);
     };
 
-    window.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mouseover', handleMouseOver);
-    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener("mousemove", moveCursor);
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mouseover', handleMouseOver);
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener("mousemove", moveCursor);
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [cursorX, cursorY, isVisible]);
 
-  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 768px)").matches;
 
   if (isMobile) {
     return null;
@@ -70,8 +72,8 @@ const CustomCursor = () => {
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
-        translateX: '-50%',
-        translateY: '-50%',
+        translateX: "-50%",
+        translateY: "-50%",
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
@@ -80,16 +82,17 @@ const CustomCursor = () => {
       <motion.div
         className="rounded-full bg-primary"
         animate={{
-          scale: isHovering ? 1.5 : 1,
+          scale: isHovering ? 1.2 : 1,
         }}
         transition={{
-          type: 'spring',
+          type: "spring",
           stiffness: 400,
           damping: 25,
         }}
         style={{
-          width: isHovering ? 24 : 16,
-          height: isHovering ? 24 : 16,
+          width: isHovering ? 20 : 16,
+          height: isHovering ? 20 : 16,
+          opacity: 0.85,
         }}
       />
     </motion.div>
@@ -97,4 +100,3 @@ const CustomCursor = () => {
 };
 
 export default CustomCursor;
-

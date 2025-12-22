@@ -114,21 +114,21 @@ const AnimatedButton = ({
       {tooltip && (
         <>
           {!isMobile && (
-            <motion.div
-              className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap pointer-events-none z-50 flex items-center gap-2"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{
-                opacity: isHovered ? 1 : 0,
-                y: isHovered ? 0 : 5,
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              {TooltipIcon && <TooltipIcon className="w-3.5 h-3.5 flex-shrink-0" />}
-              <span>{tooltip}</span>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
-                <div className="border-4 border-transparent border-t-gray-900" />
-              </div>
-            </motion.div>
+        <motion.div
+          className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap pointer-events-none z-50 flex items-center gap-2"
+          initial={{ opacity: 0, y: 5 }}
+          animate={{
+            opacity: isHovered ? 1 : 0,
+            y: isHovered ? 0 : 5,
+          }}
+          transition={{ duration: 0.2 }}
+        >
+          {TooltipIcon && <TooltipIcon className="w-3.5 h-3.5 flex-shrink-0" />}
+          <span>{tooltip}</span>
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
+            <div className="border-4 border-transparent border-t-gray-900" />
+          </div>
+        </motion.div>
           )}
           {isMobile && (
             <div className="mt-2 text-center">
@@ -191,21 +191,21 @@ const AnimatedButton = ({
         {tooltip && (
           <>
             {!isMobile && (
-              <motion.div
-                className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap pointer-events-none z-50 flex items-center gap-2"
-                initial={{ opacity: 0, y: 5 }}
-                animate={{
-                  opacity: isHovered ? 1 : 0,
-                  y: isHovered ? 0 : 5,
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                {TooltipIcon && <TooltipIcon className="w-3.5 h-3.5 flex-shrink-0" />}
-                <span>{tooltip}</span>
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
-                  <div className="border-4 border-transparent border-t-gray-900" />
-                </div>
-              </motion.div>
+          <motion.div
+            className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap pointer-events-none z-50 flex items-center gap-2"
+            initial={{ opacity: 0, y: 5 }}
+            animate={{
+              opacity: isHovered ? 1 : 0,
+              y: isHovered ? 0 : 5,
+            }}
+            transition={{ duration: 0.2 }}
+          >
+            {TooltipIcon && <TooltipIcon className="w-3.5 h-3.5 flex-shrink-0" />}
+            <span>{tooltip}</span>
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
+            <div className="border-4 border-transparent border-t-gray-900" />
+          </div>
+        </motion.div>
             )}
             {isMobile && (
               <div className="mt-2 text-center">
