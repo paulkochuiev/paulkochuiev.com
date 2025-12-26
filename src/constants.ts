@@ -10,7 +10,7 @@ export const PERSONAL_INFO = {
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/paulkochuiev/",
   email: "mailto:paulkochuiev@gmail.com",
-  adplist: "https://adplist.org/members/paul-kochuiev",
+  adplist: "https://adplist.org/mentors/paul-kochuiev?session=consultation-1-hour-31ac-mjmwmy1g",
   github: "https://github.com/paulkochuiev",
   whatsapp:
     "https://api.whatsapp.com/send/?phone=48572232501&text&type=phone_number&app_absent=0",
