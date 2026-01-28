@@ -81,59 +81,53 @@ const About = () => {
                 <p className="text-sm font-semibold text-primary-light mb-2">
                   {SECTIONS.about.expertise.label}
                 </p>
-                {SECTIONS.about.expertise.items ? (
-                  <ul className="space-y-2">
-                    {SECTIONS.about.expertise.items.map((item, index) => {
-                      const IconComponent =
-                        item.icon === "Code"
-                          ? Code
-                          : item.icon === "Server"
-                          ? Server
-                          : item.icon === "Layers"
-                          ? Layers
-                          : item.icon === "Building2"
-                          ? Building2
-                          : Code;
+                <ul className="space-y-2">
+                  {SECTIONS.about.expertise.items.map((item, index) => {
+                    const IconComponent =
+                      item.icon === "Code"
+                        ? Code
+                        : item.icon === "Server"
+                        ? Server
+                        : item.icon === "Layers"
+                        ? Layers
+                        : item.icon === "Building2"
+                        ? Building2
+                        : Code;
 
-                      return (
-                        <motion.li
-                          key={index}
-                          className="flex items-start gap-3 text-sm text-primary-light"
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={
-                            isInView
-                              ? { opacity: 1, x: 0 }
-                              : { opacity: 0, x: -10 }
-                          }
-                          transition={{
-                            delay: 0.4 + index * 0.1,
-                            duration: 0.4,
+                    return (
+                      <motion.li
+                        key={index}
+                        className="flex items-start gap-3 text-sm text-primary-light"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={
+                          isInView
+                            ? { opacity: 1, x: 0 }
+                            : { opacity: 0, x: -10 }
+                        }
+                        transition={{
+                          delay: 0.4 + index * 0.1,
+                          duration: 0.4,
+                        }}
+                      >
+                        <motion.div
+                          className="flex-shrink-0 mt-0.5"
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{
+                            opacity: isMobile || isHovered ? 1 : 0,
+                            scale: isMobile || isHovered ? 1 : 0,
                           }}
+                          transition={{ duration: 0.3 }}
                         >
-                          <motion.div
-                            className="flex-shrink-0 mt-0.5"
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{
-                              opacity: isMobile || isHovered ? 1 : 0,
-                              scale: isMobile || isHovered ? 1 : 0,
-                            }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <IconComponent className="w-4 h-4 text-primary" />
-                          </motion.div>
-                          <span>
-                            <span className="font-semibold">{item.title}:</span>{" "}
-                            {item.description}
-                          </span>
-                        </motion.li>
-                      );
-                    })}
-                  </ul>
-                ) : (
-                  <p className="text-sm text-primary-light">
-                    {SECTIONS.about.expertise.value}
-                  </p>
-                )}
+                          <IconComponent className="w-4 h-4 text-primary" />
+                        </motion.div>
+                        <span>
+                          <span className="font-semibold">{item.title}:</span>{" "}
+                          {item.description}
+                        </span>
+                      </motion.li>
+                    );
+                  })}
+                </ul>
               </div>
             </motion.div>
           </motion.div>
