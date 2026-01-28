@@ -1,11 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Code, Zap, Building2 } from "lucide-react";
+import { Code, Building2, Server, Layers } from "lucide-react";
 import { SECTIONS } from "../constants";
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -56,85 +56,84 @@ const About = () => {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <div className="space-y-4">
+            <motion.div
+              className="space-y-4"
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
               <p className="text-sm sm:text-base text-primary-light leading-relaxed">
                 {SECTIONS.about.description}
               </p>
 
-              <motion.p
-                className="text-sm sm:text-base text-primary-light leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              >
+              <p className="text-sm sm:text-base text-primary-light leading-relaxed">
                 {SECTIONS.about.closing}
-              </motion.p>
-            </div>
+              </p>
+            </motion.div>
 
             <motion.div
-              className="space-y-3 lg:pl-8 lg:border-l lg:border-gray-200"
+              className="lg:pl-8 lg:border-l lg:border-gray-200"
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              <div className="flex items-start gap-3">
-                <motion.div
-                  className="flex-shrink-0 mt-0.5"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{
-                    opacity: isMobile || isHovered ? 1 : 0,
-                    scale: isMobile || isHovered ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Code className="w-4 h-4 text-primary" />
-                </motion.div>
-                <p className="text-sm text-primary-light">
-                  <span className="font-semibold">
-                    {SECTIONS.about.expertise.label}
-                  </span>{" "}
-                  {SECTIONS.about.expertise.value}
+              <div className="space-y-2">
+                <p className="text-sm font-semibold text-primary-light mb-2">
+                  {SECTIONS.about.expertise.label}
                 </p>
-              </div>
+                {SECTIONS.about.expertise.items ? (
+                  <ul className="space-y-2">
+                    {SECTIONS.about.expertise.items.map((item, index) => {
+                      const IconComponent =
+                        item.icon === "Code"
+                          ? Code
+                          : item.icon === "Server"
+                          ? Server
+                          : item.icon === "Layers"
+                          ? Layers
+                          : item.icon === "Building2"
+                          ? Building2
+                          : Code;
 
-              <div className="flex items-start gap-3">
-                <motion.div
-                  className="flex-shrink-0 mt-0.5"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{
-                    opacity: isMobile || isHovered ? 1 : 0,
-                    scale: isMobile || isHovered ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3, delay: 0.1 }}
-                >
-                  <Building2 className="w-4 h-4 text-primary" />
-                </motion.div>
-                <p className="text-sm text-primary-light">
-                  <span className="font-semibold">
-                    {SECTIONS.about.industry.label}
-                  </span>{" "}
-                  {SECTIONS.about.industry.value}
-                </p>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <motion.div
-                  className="flex-shrink-0 mt-0.5"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{
-                    opacity: isMobile || isHovered ? 1 : 0,
-                    scale: isMobile || isHovered ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3, delay: 0.2 }}
-                >
-                  <Zap className="w-4 h-4 text-primary" />
-                </motion.div>
-                <p className="text-sm text-primary-light">
-                  <span className="font-semibold">
-                    {SECTIONS.about.additional.label}
-                  </span>{" "}
-                  {SECTIONS.about.additional.value}
-                </p>
+                      return (
+                        <motion.li
+                          key={index}
+                          className="flex items-start gap-3 text-sm text-primary-light"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={
+                            isInView
+                              ? { opacity: 1, x: 0 }
+                              : { opacity: 0, x: -10 }
+                          }
+                          transition={{
+                            delay: 0.4 + index * 0.1,
+                            duration: 0.4,
+                          }}
+                        >
+                          <motion.div
+                            className="flex-shrink-0 mt-0.5"
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{
+                              opacity: isMobile || isHovered ? 1 : 0,
+                              scale: isMobile || isHovered ? 1 : 0,
+                            }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <IconComponent className="w-4 h-4 text-primary" />
+                          </motion.div>
+                          <span>
+                            <span className="font-semibold">{item.title}:</span>{" "}
+                            {item.description}
+                          </span>
+                        </motion.li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-primary-light">
+                    {SECTIONS.about.expertise.value}
+                  </p>
+                )}
               </div>
             </motion.div>
           </motion.div>

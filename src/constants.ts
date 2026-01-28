@@ -30,21 +30,39 @@ export const SECTIONS = {
   about: {
     title: "About",
     description:
-      "Software Engineer specializing in React, TypeScript, and Next.js. I have worked on e-commerce, admin panels, SaaS, and video editing applications, delivering scalable and high-performance web solutions.",
+      "Senior Frontend / Full-Stack Engineer with 6+ years of frontend experience and 3+ years of full-stack development, specializing in Node.js and NestJS. I build scalable, high-performance web applications using React, TypeScript, and Next.js, while designing backend services, APIs, and integrations for complex business workflows.",
     expertise: {
-      label: "Expertise in:",
-      value: "React, Next.js, TypeScript, Redux, MUI, CSS Modules, shadcn.",
-    },
-    industry: {
-      label: "Industry experience:",
-      value: "E-commerce, FinTech, SportTech, Logistics, B2B.",
+      label: "Core expertise:",
+      items: [
+        {
+          title: "Frontend",
+          description: "React, Next.js, TypeScript, Redux, MUI, CSS Modules",
+          icon: "Code",
+        },
+        {
+          title: "Backend",
+          description: "Node.js, NestJS, REST APIs, API integrations",
+          icon: "Server",
+        },
+        {
+          title: "Architecture",
+          description:
+            "Component-driven UI, modular services, clean code, performance optimization, AWS",
+          icon: "Layers",
+        },
+        {
+          title: "Domains",
+          description: "FinTech, SportTech, E-commerce, SaaS",
+          icon: "Building2",
+        },
+      ],
     },
     additional: {
-      label: "Additional skills:",
-      value: "Basic knowledge of Node.js, API integrations.",
+      label: "",
+      value: "",
     },
     closing:
-      "Passionate about building clean and maintainable UI with a strong focus on usability, accessibility, and performance. Always learning and staying updated with the latest front-end trends.",
+      "Passionate about code quality, maintainability, and developer experience. I enjoy owning features end-to-end and continuously improving technical solutions.",
   },
   contact: {
     title: "Reach Me",
