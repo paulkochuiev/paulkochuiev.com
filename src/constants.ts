@@ -30,29 +30,31 @@ export const SECTIONS = {
   about: {
     title: "About",
     description:
-      "Senior Frontend / Full-Stack Engineer with 6+ years of frontend experience and 3+ years of full-stack development, specializing in Node.js and NestJS. I build scalable, high-performance web applications using React, TypeScript, and Next.js, while designing backend services, APIs, and integrations for complex business workflows.",
+      "Software Engineer with 6+ years of experience in e-commerce, media, and fintech, building B2B products and internal tools. Experienced in React, TypeScript, and Node.js, with deep ownership of features—from UI (photo editors, dashboards) to backend logic and integrations—with a focus on clean architecture and performance.",
     expertise: {
       label: "Core expertise:",
       items: [
         {
           title: "Frontend",
-          description: "React, Next.js, TypeScript, Redux, MUI, CSS Modules",
+          description:
+            "React, Next.js, TypeScript, Redux, Hooks, Tailwind, MUI, Ant Design, Storybook, Framer Motion, Mapbox, performance-focused UI",
           icon: "Code",
         },
         {
           title: "Backend",
-          description: "Node.js, NestJS, REST APIs, API integrations",
+          description:
+            "Node.js, NestJS, REST, GraphQL, PostgreSQL, TypeORM, Prisma, Redis, RabbitMQ, WebSockets",
           icon: "Server",
         },
         {
           title: "Architecture",
           description:
-            "Component-driven UI, modular services, clean code, performance optimization, AWS",
+            "Microservices, Docker, AWS (S3, Lambda), CI/CD, clean architecture, testing (Jest, RTL, Cypress)",
           icon: "Layers",
         },
         {
           title: "Domains",
-          description: "FinTech, SportTech, E-commerce, SaaS",
+          description: "E-commerce, media, fintech, B2B platforms, internal tools",
           icon: "Building2",
         },
       ],
@@ -62,7 +64,7 @@ export const SECTIONS = {
       value: "",
     },
     closing:
-      "Passionate about code quality, maintainability, and developer experience. I enjoy owning features end-to-end and continuously improving technical solutions.",
+      "I care about maintainable code, clear structure, and measurable performance. I like taking features from idea to production—UI, APIs, integrations—and refining them as products grow.",
   },
   contact: {
     title: "Reach Me",
@@ -83,36 +85,39 @@ export const SECTIONS = {
 
 export const PROJECTS = [
   {
-    title: "GigSafe",
-    projectType: "Dashboard and mobile-first app for onboarding",
+    title: "OneReach.ai",
+    projectType:
+      "Senior Full-Stack Engineer · B2B platform (Warsaw, Poland · remote)",
     description: [
-      "Built and launched the <strong>Master Contractors module</strong>, enabling master contractors to manage subcontractors, paving the way for increased customer acquisition and platform scalability",
-      "Integrated <strong>OatFi</strong> as a new payment provider on the frontend, allowing clients to pay contractors via wire transfers and loan-based payouts",
-      "Developed and improved <strong>UI functionality on the Team page</strong>, enabling clients to manage their internal managers and administrators directly within the app without external support",
+      "Led development of the <strong>Master Contractors module</strong> for managing subcontractors, improving platform scalability and supporting business growth",
+      "Built and improved <strong>team management dashboards</strong> (roles, permissions, internal users) so clients could run operations without external support",
+      "Integrated <strong>payment providers</strong> (including OatFi) and financial flows with reliable payout logic and stronger transaction stability",
+      "Developed <strong>Transactions and Accounts</strong> modules (state transitions, balances, ledger logic) for consistent, traceable financial operations",
     ],
-    company: "GigSafe",
-    period: "Feb 2025 - Jul 2025 · 6 mos",
-    link: "https://www.gigsafe.com/",
+    company: "OneReach.ai",
+    period: "Feb 2025 - Jan 2026",
+    link: "https://onereach.ai/",
   },
   {
-    title: "ArtPix 3D",
-    projectType: "B2C and B2B e-commerce shop & ERP system",
+    title: "NDA — E-commerce",
+    projectType:
+      "Full-Stack Engineer · B2C/B2B e-commerce & ERP (Warsaw, Poland · remote)",
     description: [
-      "Optimized <strong>high-load e-commerce platform</strong> integrated with an <strong>ERP system</strong>",
-      "Developed <strong>photo editor</strong> and implemented <strong>business logic for new products</strong>",
-      "Implemented <strong>end-to-end inventory module</strong> enabling warehouse stock management",
-      "Developed <strong>multishipping functionality</strong>, reducing order processing time",
+      "Developed <strong>Customizer</strong>, a canvas-based photo editor shipped as a separate npm package with its own isolated dev environment",
+      "Built and maintained core backend in <strong>NestJS and PostgreSQL</strong> (products, orders, ERP sync), including async jobs, retries, and data mapping for reliable integrations",
+      "Designed an <strong>end-to-end media pipeline</strong> (photo editor → upload → Amazon S3 → backend processing) with compression and caching to cut load times",
     ],
-    period: "Dec 2023 - Feb 2025 · 1 yr 3 mos",
-    link: "https://artpix3d.com/?srsltid=AfmBOoq-PvXy2hO5rwc-w-AHezlGgT9zWCXKZ58HAEyBHMtkgIfnyvjc",
+    company: "Confidential",
+    period: "Dec 2023 - Feb 2025",
   },
   {
     title: "Andersen Lab",
-    projectType: "Booking platform for truck parking",
+    projectType:
+      "Senior Full-Stack Developer · Booking & logistics (Warsaw, Poland · hybrid)",
     description: [
-      "Integrated <strong>Mapbox</strong> for real-time navigation and trip booking, streamlining the reservation process and increasing company revenue",
-      "Redesigned the entire <strong>platform UI using Emotion</strong>, incorporating modern animations for a more engaging and seamless user experience",
-      "Significantly improved <strong>performance</strong>, reducing page load time and boosting Lighthouse scores, resulting in higher user retention and engagement",
+      "Integrated <strong>Mapbox</strong> for real-time navigation and trip booking—frontend map UX plus backend data—improving the booking flow and revenue",
+      "Redesigned the platform UI with <strong>Emotion</strong>, modern animations, and consistent styling for a clearer, more engaging experience",
+      "Improved frontend and API performance, cutting page load time by about <strong>30%</strong> and raising Lighthouse scores, which helped retention and engagement",
     ],
     company: "Andersen Lab",
     period: "Jul 2023 - Dec 2023 · 6 mos",
@@ -120,26 +125,28 @@ export const PROJECTS = [
   },
   {
     title: "Andersen Lab",
-    projectType: "Bank admin panel",
+    projectType:
+      "Middle / Senior Full-Stack Developer · Media (Odesa, Ukraine · on-site)",
     description: [
-      "Increased <strong>test coverage</strong>, improving system reliability and reducing production issues by implementing <strong>Jest and React Testing Library</strong>",
-      "Developed <strong>deposit management features</strong> (opening & editing) using React, TypeScript, and Redux, streamlining banking operations and reducing manual workload",
-      "Redesigned the <strong>admin panel UI/UX</strong>, enhancing usability for <strong>200+ bank employees</strong> and improving task completion speed",
+      "Implemented <strong>social media sharing and preview</strong> features, boosting engagement and share rates across major platforms",
+      "Built a <strong>subtitle generation pipeline</strong> (processing, formatting, delivery) across backend services and frontend rendering for better video accessibility",
+      "Maintained an <strong>internal UI component library</strong> as an npm package on Material UI, standardizing the design system and team velocity",
+    ],
+    company: "Andersen Lab",
+    period: "Dec 2020 - Jul 2023 · 2 yrs 8 mos",
+    link: "https://andersenlab.com/",
+  },
+  {
+    title: "Andersen Lab",
+    projectType:
+      "Intern / Junior Full-Stack Developer · Banking admin (Warsaw, Poland · remote)",
+    description: [
+      "Implemented the <strong>DepositManagement</strong> module (create/edit flows, validation, interest rules), reducing input errors and aligning with business rules",
+      "Built reusable <strong>form components</strong> for the deposit lifecycle with solid validation, cutting frontend bugs and improving reliability",
+      "Redesigned the <strong>admin panel UI/UX</strong> for <strong>200+ employees</strong>, improving usability and how quickly people completed everyday tasks",
     ],
     company: "Andersen Lab",
     period: "Jan 2020 - Dec 2020 · 1 yr",
     link: "https://andersenlab.com/",
-  },
-  {
-    title: "WSC Sports",
-    projectType: "Video Editor",
-    description: [
-      "Implemented <strong>social media sharing & preview features</strong>, increasing user engagement and share rates across major platforms",
-      "Developed an <strong>automatic subtitle generation</strong> feature, enhancing accessibility and user experience for video content",
-      "Contributed to the development of an <strong>internal UI component library</strong>, standardizing the design system and improving development efficiency",
-    ],
-    company: "WSC Sports",
-    period: "Dec 2020 - Jul 2023 · 2 yrs 8 mos",
-    link: "https://wsc-sports.com/",
   },
 ];

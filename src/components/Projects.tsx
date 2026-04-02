@@ -72,7 +72,7 @@ const Projects = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const Icon = project.icon;
 
             const CardContent = ({ isHovered }: { isHovered: boolean }) => (
@@ -170,7 +170,6 @@ const Projects = () => {
 
               return (
                 <motion.div
-                  key={project.title}
                   variants={cardVariants}
                   className="group h-full self-stretch"
                 >
@@ -179,7 +178,9 @@ const Projects = () => {
               );
             };
 
-            return <ProjectCard key={project.title} />;
+            return (
+              <ProjectCard key={`${project.title}-${project.period ?? index}`} />
+            );
           })}
         </motion.div>
       </div>
