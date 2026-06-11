@@ -1,9 +1,9 @@
 export const PERSONAL_INFO = {
   name: "Paul Kochuiev",
-  title: "Software Engineer",
+  title: "Senior Software Engineer",
   location: "Warsaw, Poland",
   email: "paulkochuiev@gmail.com",
-  resumeFileName: "Paul_Kochuiev_senior_frontend_engineer.pdf",
+  resumeFileName: "Paul_Kochuiev_senior_software_engineer.pdf",
   resumePath: "/resume/resume.pdf",
 };
 
@@ -12,8 +12,6 @@ export const SOCIAL_LINKS = {
   email: "mailto:paulkochuiev@gmail.com",
   adplist: "https://adplist.org/mentors/paul-kochuiev?session=consultation-1-hour-31ac-mjmwmy1g",
   github: "https://github.com/paulkochuiev",
-  whatsapp:
-    "https://api.whatsapp.com/send/?phone=48572232501&text&type=phone_number&app_absent=0",
   calendly:
     "https://calendly.com/paulkochuiev/30min?duration=30&back=1&month=2025-12",
 };

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { MapPin, Mail } from "lucide-react";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "../constants";
 
@@ -27,11 +27,6 @@ const socialLinks = [
     name: "GitHub",
     url: SOCIAL_LINKS.github,
     icon: FaGithub,
-  },
-  {
-    name: "WhatsApp",
-    url: SOCIAL_LINKS.whatsapp,
-    icon: FaWhatsapp,
   },
 ];
 
