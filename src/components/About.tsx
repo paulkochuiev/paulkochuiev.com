@@ -39,7 +39,6 @@ const About = () => {
 
         <motion.div
           className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 group relative"
-          style={{ cursor: "none" }}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}

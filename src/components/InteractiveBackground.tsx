@@ -7,10 +7,6 @@ const InteractiveBackground = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 25, stiffness: 200 };
-  const x = useSpring(mouseX, springConfig);
-  const y = useSpring(mouseY, springConfig);
-
   const x2 = useSpring(mouseX, { damping: 20, stiffness: 150 });
   const y2 = useSpring(mouseY, { damping: 20, stiffness: 150 });
   const x3 = useSpring(mouseX, { damping: 18, stiffness: 120 });
@@ -120,25 +116,6 @@ const InteractiveBackground = () => {
       />
       
       <motion.div
-        className="absolute rounded-full blur-3xl"
-        style={{
-          x: x,
-          y: y,
-          translateX: '-50%',
-          translateY: '-50%',
-          width: 1000,
-          height: 1000,
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(200, 220, 255, 0.3) 20%, rgba(150, 180, 255, 0.2) 40%, transparent 70%)',
-        }}
-        animate={{
-          opacity: isVisible ? 0.8 : 0,
-        }}
-        transition={{
-          duration: 0.4,
-        }}
-      />
-      
-      <motion.div
         className="absolute rounded-full blur-2xl"
         style={{
           x: x2,
@@ -156,7 +133,7 @@ const InteractiveBackground = () => {
           duration: 0.5,
         }}
       />
-      
+
       <motion.div
         className="absolute rounded-full blur-2xl"
         style={{
@@ -211,25 +188,6 @@ const InteractiveBackground = () => {
         }}
         transition={{
           duration: 0.8,
-        }}
-      />
-      
-      <motion.div
-        className="absolute rounded-full blur-3xl"
-        style={{
-          x: x,
-          y: y,
-          translateX: '-50%',
-          translateY: '-50%',
-          width: 1200,
-          height: 1200,
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%)',
-        }}
-        animate={{
-          opacity: isVisible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.6,
         }}
       />
         </>

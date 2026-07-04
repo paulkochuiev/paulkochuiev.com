@@ -6,29 +6,27 @@
   body {
     @apply font-sans antialiased;
     color: #1A1A1A;
-    cursor: none;
     min-height: 100vh;
     position: relative;
   }
 
-  a, button {
-    cursor: none !important;
-  }
-
   html {
     scroll-behavior: smooth;
-  }
-
-  @media (max-width: 768px) {
-    body {
-      cursor: auto;
-    }
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
 

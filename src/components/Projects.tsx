@@ -139,7 +139,6 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="h-full p-4 sm:p-5 bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col"
-                  style={{ cursor: "none" }}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                   whileHover={{
@@ -154,7 +153,6 @@ const Projects = () => {
               ) : (
                 <motion.div
                   className="h-full p-4 sm:p-5 bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col"
-                  style={{ cursor: "none" }}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                   whileHover={{

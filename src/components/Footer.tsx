@@ -46,7 +46,6 @@ const Footer = () => {
               <a
                 href={SOCIAL_LINKS.email}
                 className="hover:text-primary transition-colors"
-                style={{ cursor: "none" }}
               >
                 {PERSONAL_INFO.email}
               </a>
@@ -64,7 +63,6 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2.5 rounded-lg bg-gray-100 text-gray-600"
-                  style={{ cursor: "none" }}
                   whileHover={{
                     scale: 1.1,
                     backgroundColor: "rgb(37, 99, 235)",
